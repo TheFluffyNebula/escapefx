@@ -50,13 +50,18 @@ Level 8: wrod 2
 Components required: 5 buttons: e i g h t -> t i h e g
 Label says "this"
 Solution: click the buttons in the right order
-(IN PROGRESS)
+(DONE)
 
 Level 9: move
 Components required: label
 Label says "move"
 Solution: move
+(IN PROGRESS)
 
 Level 10: two buttons
 Components required: two buttons
 Solution: first button makes a letter green, second moves the green letter right
+
+Level 11: 35 from 40x
+Components required: however many that was
+Solution: ottffssent

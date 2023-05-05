@@ -49,7 +49,7 @@ public class LevelPane extends Pane {
     private int lv3Clicks = 0;
     private Label lv3Label;
     // level 4 components
-    private int lv4Clicks = 0;
+    private int lv4Clicks = 0; //progress tracker
     private Label lv4Label;
     // level 5 components
     private int lv5Clicks = 0;
@@ -62,6 +62,15 @@ public class LevelPane extends Pane {
     private Label lv6Label;
     private TextField lv6TextField;
     private Button lv6SubmitButton;
+    // level 8 components
+    private Label lv8Label;
+    private int lv8Clicks = 0; //progress tracker
+    private Button lv8Button1;
+    private Button lv8Button2;
+    private Button lv8Button3;
+    private Button lv8Button4;
+    private Button lv8Button5;
+    // level 9 components
 
     // constructor
     /**
@@ -417,9 +426,9 @@ public class LevelPane extends Pane {
         }
         if (levelNum == 7) {
             System.out.println("Welcome to level 7!");
-            Timeline cursorTimer = new Timeline(new KeyFrame(Duration.seconds(7), event -> {
-                // Code to execute after seven seconds of inactivity
-                // System.out.println("Seven seconds of inactivity detected!");
+            Timeline cursorTimer = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+                // Code to execute after five seconds of inactivity
+                // System.out.println("Five seconds of inactivity detected!");
                 makeLettersGreen();
                 nextLevelButton.setVisible(true);
                 nextLevelText.setVisible(true);
@@ -434,6 +443,86 @@ public class LevelPane extends Pane {
                 Level levelEight = new Level(8, "wrod 2");
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelEight));
+            });
+        }
+        if (levelNum == 8) {
+            lv8Label = new Label("this"); // user has to click all the letters
+            lv8Label.setLayoutX(360);
+            lv8Label.setLayoutY(230);
+            lv8Label.setTextFill(Color.BLACK);
+            lv8Label.setFont(new Font("Arial", 20));
+            lv8Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv8Label);
+            System.out.println("Welcome to level 8!");
+            Font buttonFont = new Font("Arial", 12);
+            lv8Button1 = new Button("  t  ");
+            lv8Button2 = new Button("  i  ");
+            lv8Button3 = new Button("  h  ");
+            lv8Button4 = new Button("  e  ");
+            lv8Button5 = new Button("  g  ");
+            lv8Button1.setLayoutX(360);
+            lv8Button1.setLayoutY(280);
+            lv8Button2.setLayoutX(400);
+            lv8Button2.setLayoutY(280);
+            lv8Button3.setLayoutX(440);
+            lv8Button3.setLayoutY(280);
+            lv8Button4.setLayoutX(480);
+            lv8Button4.setLayoutY(280);
+            lv8Button5.setLayoutX(520);
+            lv8Button5.setLayoutY(280);
+            lv8Button1.setFont(buttonFont);
+            lv8Button2.setFont(buttonFont);
+            lv8Button3.setFont(buttonFont);
+            lv8Button4.setFont(buttonFont);
+            lv8Button5.setFont(buttonFont);
+            getChildren().add(lv8Button1);
+            getChildren().add(lv8Button2);
+            getChildren().add(lv8Button3);
+            getChildren().add(lv8Button4);
+            getChildren().add(lv8Button5);
+            //listeners for each button
+            lv8Button1.setOnAction(e -> {
+                if (lv8Clicks == 4) {
+                    makeLettersGreen();
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);
+                } else {
+                    lv8Clicks = 0;
+                }
+            });
+            lv8Button2.setOnAction(e -> {
+                if (lv8Clicks == 1) {
+                    lv8Clicks++;
+                } else {
+                    lv8Clicks = 0;
+                }
+            });
+            lv8Button3.setOnAction(e -> {
+                if (lv8Clicks == 3) {
+                    lv8Clicks++;
+                } else {
+                    lv8Clicks = 0;
+                }
+            });
+            lv8Button4.setOnAction(e -> {
+                if (lv8Clicks == 0) {
+                    lv8Clicks++;
+                } else {
+                    lv8Clicks = 0;
+                }
+            });
+            lv8Button5.setOnAction(e -> {
+                if (lv8Clicks == 2) {
+                    lv8Clicks++;
+                } else {
+                    lv8Clicks = 0;
+                }
+            });
+            nextLevelButton.setOnAction(e -> {
+                // System.out.println("level 3 button clicked");
+                Level levelNine = new Level(9, "move");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelNine));
             });
         }
     }
