@@ -52,15 +52,19 @@ Label says "this"
 Solution: click the buttons in the right order
 (DONE)
 
-Level 9: move
-Components required: label
-Label says "move"
-Solution: move
+go back and add labels for levels 5 and 7 (in progress)
+
+Level 9: no button 2
+Components required: clickable letters
+Solution: click the letters such that all lights turn green
+The simplest solution is to click letters 2 and 5
 (IN PROGRESS)
 
 Level 10: two buttons
 Components required: two buttons
 Solution: first button makes a letter green, second moves the green letter right
+
+level selector (eek!)
 
 Level 11: 35 from 40x
 Components required: however many that was

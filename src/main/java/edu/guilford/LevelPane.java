@@ -1,5 +1,8 @@
 package edu.guilford;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.control.Button;
@@ -53,10 +56,6 @@ public class LevelPane extends Pane {
     private Label lv4Label;
     // level 5 components
     private int lv5Clicks = 0;
-    private Button lv5Button1;
-    private Button lv5Button2;
-    private Button lv5Button3;
-    private Button lv5Button4;
     private Button lv5Button5;
     // level 6 components
     private Label lv6Label;
@@ -70,7 +69,7 @@ public class LevelPane extends Pane {
     private Button lv8Button3;
     private Button lv8Button4;
     private Button lv8Button5;
-    // level 9 components
+    // level 10 components
 
     // constructor
     /**
@@ -348,26 +347,20 @@ public class LevelPane extends Pane {
         if (levelNum == 5) {
             // user has to click 5th button 5 times
             System.out.println("Welcome to level 5!");
-            lv5Button1 = new Button("    ");
-            lv5Button2 = new Button("    ");
-            lv5Button3 = new Button("    ");
-            lv5Button4 = new Button("    ");
-            lv5Button5 = new Button("    ");
-            lv5Button1.setLayoutX(360);
-            lv5Button1.setLayoutY(230);
-            lv5Button2.setLayoutX(400);
-            lv5Button2.setLayoutY(230);
-            lv5Button3.setLayoutX(440);
-            lv5Button3.setLayoutY(230);
-            lv5Button4.setLayoutX(480);
-            lv5Button4.setLayoutY(230);
-            lv5Button5.setLayoutX(520);
-            lv5Button5.setLayoutY(230);
-            getChildren().add(lv5Button1);
-            getChildren().add(lv5Button2);
-            getChildren().add(lv5Button3);
-            getChildren().add(lv5Button4);
-            getChildren().add(lv5Button5);
+            Button[] lv5Buttons = new Button[]{
+                new Button("    "),
+                new Button("    "),
+                new Button("    "),
+                new Button("    "),
+                lv5Button5 = new Button("    ")
+            };
+
+            for (int i = 0; i < lv5Buttons.length; i++) {
+                lv5Buttons[i].setLayoutX(360 + i * 40);
+                lv5Buttons[i].setLayoutY(280);
+                getChildren().add(lv5Buttons[i]);
+            }
+
             lv5Button5.setOnAction(e -> {
                 lv5Clicks++;
                 if (lv5Clicks == 5) {
@@ -455,31 +448,21 @@ public class LevelPane extends Pane {
             getChildren().add(lv8Label);
             System.out.println("Welcome to level 8!");
             Font buttonFont = new Font("Arial", 12);
-            lv8Button1 = new Button("  t  ");
-            lv8Button2 = new Button("  i  ");
-            lv8Button3 = new Button("  h  ");
-            lv8Button4 = new Button("  e  ");
-            lv8Button5 = new Button("  g  ");
-            lv8Button1.setLayoutX(360);
-            lv8Button1.setLayoutY(280);
-            lv8Button2.setLayoutX(400);
-            lv8Button2.setLayoutY(280);
-            lv8Button3.setLayoutX(440);
-            lv8Button3.setLayoutY(280);
-            lv8Button4.setLayoutX(480);
-            lv8Button4.setLayoutY(280);
-            lv8Button5.setLayoutX(520);
-            lv8Button5.setLayoutY(280);
-            lv8Button1.setFont(buttonFont);
-            lv8Button2.setFont(buttonFont);
-            lv8Button3.setFont(buttonFont);
-            lv8Button4.setFont(buttonFont);
-            lv8Button5.setFont(buttonFont);
-            getChildren().add(lv8Button1);
-            getChildren().add(lv8Button2);
-            getChildren().add(lv8Button3);
-            getChildren().add(lv8Button4);
-            getChildren().add(lv8Button5);
+            Button[] lv8Buttons = new Button[]{
+                lv8Button1 = new Button("  t  "),
+                lv8Button2 = new Button("  i  "),
+                lv8Button3 = new Button("  h  "),
+                lv8Button4 = new Button("  e  "),
+                lv8Button5 = new Button("  g  ")
+            };
+
+            for (int i = 0; i < lv8Buttons.length; i++) {
+                lv8Buttons[i].setLayoutX(360 + i * 40);
+                lv8Buttons[i].setLayoutY(280);
+                lv8Buttons[i].setFont(buttonFont);
+                getChildren().add(lv8Buttons[i]);
+            }
+            
             //listeners for each button
             lv8Button1.setOnAction(e -> {
                 if (lv8Clicks == 4) {
@@ -520,11 +503,15 @@ public class LevelPane extends Pane {
             });
             nextLevelButton.setOnAction(e -> {
                 // System.out.println("level 3 button clicked");
-                Level levelNine = new Level(9, "move");
+                Level levelNine = new Level(9, "no button 2");
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelNine));
             });
         }
+        if (levelNum == 9) {
+            System.out.println("Welcome to level 9!");
+        }
+
     }
 
     // method to draw the backgrorund
@@ -542,43 +529,16 @@ public class LevelPane extends Pane {
         Shape door = new Rectangle(30, 130, 270, 270);
         door.setFill(Color.rgb(0, 0, 0, 1.0));
         getChildren().add(door);
-
         // draw the letters
-        eText.setFont(new Font("Arial", 60));
-        eText.setFill(Color.GRAY);
-        eText.setX(50);
-        eText.setY(100);
-
-        sText.setFont(new Font("Arial", 60));
-        sText.setFill(Color.GRAY);
-        sText.setX(90);
-        sText.setY(100);
-
-        cText.setFont(new Font("Arial", 60));
-        cText.setFill(Color.GRAY);
-        cText.setX(130);
-        cText.setY(100);
-
-        aText.setFont(new Font("Arial", 60));
-        aText.setFill(Color.GRAY);
-        aText.setX(170);
-        aText.setY(100);
-
-        pText.setFont(new Font("Arial", 60));
-        pText.setFill(Color.GRAY);
-        pText.setX(210);
-        pText.setY(100);
-
-        eText2.setFont(new Font("Arial", 60));
-        eText2.setFill(Color.GRAY);
-        eText2.setX(250);
-        eText2.setY(100);
-        getChildren().add(eText);
-        getChildren().add(sText);
-        getChildren().add(cText);
-        getChildren().add(aText);
-        getChildren().add(pText);
-        getChildren().add(eText2);
+        int i = 0;
+        for (Text text : Arrays.asList(eText, sText, cText, aText, pText, eText2)) {
+            text.setFont(new Font("Arial", 60));
+            text.setFill(Color.GRAY);
+            text.setY(100);
+            text.setX(50 + i * 40);
+            i++;
+        }
+        getChildren().addAll(eText, sText, cText, aText, pText, eText2);
 
         // keep nextLevelText and nextLevelButton invisible until the level is solved
         nextLevelButton = new Button("ok");
@@ -632,21 +592,15 @@ public class LevelPane extends Pane {
 
     // make all letters green
     public void makeLettersGreen() {
-        eText.setFill(letterGreen);
-        sText.setFill(letterGreen);
-        cText.setFill(letterGreen);
-        aText.setFill(letterGreen);
-        pText.setFill(letterGreen);
-        eText2.setFill(letterGreen);
+        List<Text> textNodes = Arrays.asList(eText, sText, cText, aText, pText, eText2);
+        textNodes.forEach(node -> node.setFill(letterGreen));
+
     }
 
     // make all letters gray
     public void makeLettersGray() {
-        eText.setFill(letterGray);
-        sText.setFill(letterGray);
-        cText.setFill(letterGray);
-        aText.setFill(letterGray);
-        pText.setFill(letterGray);
-        eText2.setFill(letterGray);
+        List<Text> textNodes = Arrays.asList(eText, sText, cText, aText, pText, eText2);
+        textNodes.forEach(node -> node.setFill(letterGray));
+
     }
 }
