@@ -43,6 +43,7 @@ public class LevelPane extends Pane {
     private Label lv2Label;
     // level 3 components
     private int lv3Clicks = 0;
+    private Label lv3Label;
 
     // constructor
     /**
@@ -191,6 +192,13 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 3) {
+            lv3Label = new Label("knock\nknock");
+            lv3Label.setLayoutX(360);
+            lv3Label.setLayoutY(230);
+            lv3Label.setTextFill(Color.BLACK);
+            lv3Label.setFont(new Font("Arial", 20));
+            lv3Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv3Label);
             System.out.println("Welcome to level 3!");
             // get the position of a click
             this.setOnMouseClicked(event -> {

@@ -34,3 +34,26 @@ Components required: clickable letters, label
 Label says "1x1, 2x2..."
 Solution: click the first letter 1 time, etc.
 
+Level 6: Wrod
+Components required: label, text field, submit button
+Label says "nsveeezornsvee" (707)
+Solution: Enter 707 into the textfield
+
+Level 7: don't move
+Components required: label
+Label says "don't move"
+Solution: don't move
+
+Level 8: aeong
+Components required: 5 buttons: e i g h t -> t i h e g
+Label says "this"
+Solution: click the buttons in the right order
+
+Level 9: move
+Components required: label
+Label says "move"
+Solution: move
+
+Level 10: two buttons
+Components required: two buttons
+Solution: first button makes a letter green, second moves the green letter right

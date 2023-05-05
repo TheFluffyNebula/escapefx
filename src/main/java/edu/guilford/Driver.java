@@ -21,6 +21,7 @@ public class Driver extends Application {
         VBox root = new VBox();
 
         //instantiate a new Level object
+        //toggle this to start at a later level
         Level levelOne = new Level(1, "a button");
 
         //instantiate levelPane object, add it to the root node
