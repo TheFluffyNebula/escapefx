@@ -19,20 +19,27 @@ import javafx.scene.text.Text;
  */
 
 public class LevelPane extends Pane {
-    // Level attribute
-    // private Level level;
-    // possible components
+    // letters above door
+    private Text eText = new Text("E");
+    private Text sText = new Text("S");
+    private Text cText = new Text("C");
+    private Text aText = new Text("A");
+    private Text pText = new Text("P");
+    private Text eText2 = new Text("E");
+    // general components (always needed)
     private Label nextLevelText;
     private Button nextLevelButton;
+    // level 1 components
     private Button lv1Button;
+    private int lv1Clicks = 0;
 
     // constructor
     /**
      * This constructor takes in a Level object
      * 
      * @param level
-     *              It always draws the background (elements present in all levels)
-     *              Based on what Level it takes in, it draws something different
+     * It always draws the background (elements present in all levels)
+     * Based on what Level it takes in, it draws something different
      */
     public LevelPane(Level level) {
         drawBackground();
@@ -44,7 +51,39 @@ public class LevelPane extends Pane {
             lv1Button.setLayoutY(230);
             // lv1Button.setVisible(true);
             getChildren().add(lv1Button);
-
+            lv1Button.setOnAction(e -> {
+                lv1Clicks++;
+                switch (lv1Clicks) {
+                    case 1:
+                        eText.setFill(Color.GREEN);
+                        eText.setOpacity(1.0);
+                        break;
+                    case 2:
+                        sText.setFill(Color.GREEN);
+                        sText.setOpacity(1.0);
+                        break;
+                    case 3:
+                        cText.setFill(Color.GREEN);
+                        cText.setOpacity(1.0);
+                        break;
+                    case 4:
+                        aText.setFill(Color.GREEN);
+                        aText.setOpacity(1.0);
+                        break;
+                    case 5:
+                        pText.setFill(Color.GREEN);
+                        pText.setOpacity(1.0);
+                        break;
+                    case 6:
+                        eText2.setFill(Color.GREEN);
+                        eText2.setOpacity(1.0);
+                        nextLevelButton.setVisible(true);
+                        nextLevelText.setVisible(true);
+                        break;
+                    default:
+                        break;
+                }
+            });
         }
     }
 
@@ -65,32 +104,31 @@ public class LevelPane extends Pane {
         getChildren().add(door);
 
         // draw the letters
-        Text eText = new Text("E");
         eText.setFont(new Font("Arial", 60));
         eText.setFill(Color.GRAY);
         eText.setX(50);
         eText.setY(100);
-        Text sText = new Text("S");
+        
         sText.setFont(new Font("Arial", 60));
         sText.setFill(Color.GRAY);
         sText.setX(90);
         sText.setY(100);
-        Text cText = new Text("C");
+        
         cText.setFont(new Font("Arial", 60));
         cText.setFill(Color.GRAY);
         cText.setX(130);
         cText.setY(100);
-        Text aText = new Text("A");
+        
         aText.setFont(new Font("Arial", 60));
         aText.setFill(Color.GRAY);
         aText.setX(170);
         aText.setY(100);
-        Text pText = new Text("P");
+        
         pText.setFont(new Font("Arial", 60));
         pText.setFill(Color.GRAY);
         pText.setX(210);
         pText.setY(100);
-        Text eText2 = new Text("E");
+        
         eText2.setFont(new Font("Arial", 60));
         eText2.setFill(Color.GRAY);
         eText2.setX(250);
@@ -111,13 +149,13 @@ public class LevelPane extends Pane {
         nextLevelButton.setFont(new Font("Arial", 40));
         nextLevelButton.setStyle("-fx-background-color: #FFC0CB; -fx-text-fill: #FFFFFF;");
         getChildren().add(nextLevelButton);
-        // nextLevelButton.setVisible(false);
+        nextLevelButton.setVisible(false);
         nextLevelText = new Label("Ready for the\nnext level?");
         nextLevelText.setLayoutX(110);
         nextLevelText.setLayoutY(200);
         nextLevelText.setTextFill(Color.WHITE);
         nextLevelText.setFont(new Font("Arial", 20));
         getChildren().add(nextLevelText);
-        // nextLevelText.setVisible(false);
+        nextLevelText.setVisible(false);
     }
 }
