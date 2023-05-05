@@ -44,12 +44,13 @@ Level 7: don't move
 Components required: label
 Label says "don't move"
 Solution: don't move
-(IN PROGRESS)
+(DONE)
 
-Level 8: aeong
+Level 8: wrod 2
 Components required: 5 buttons: e i g h t -> t i h e g
 Label says "this"
 Solution: click the buttons in the right order
+(IN PROGRESS)
 
 Level 9: move
 Components required: label

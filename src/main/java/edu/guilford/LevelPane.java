@@ -1,5 +1,7 @@
 package edu.guilford;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -12,6 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 /**
  * This class is a Pane that holds the level.
@@ -122,7 +125,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 2) {
-            lv2Label = new Label("no button?"); //user has to click all the letters
+            lv2Label = new Label("no button?"); // user has to click all the letters
             lv2Label.setLayoutX(360);
             lv2Label.setLayoutY(230);
             lv2Label.setTextFill(Color.BLACK);
@@ -207,7 +210,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 3) {
-            lv3Label = new Label("knock\nknock"); //user has to click the door twice
+            lv3Label = new Label("knock\nknock"); // user has to click the door twice
             lv3Label.setLayoutX(360);
             lv3Label.setLayoutY(230);
             lv3Label.setTextFill(Color.BLACK);
@@ -238,7 +241,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 4) {
-            lv4Label = new Label("PEACE"); //user has to spell peace
+            lv4Label = new Label("PEACE"); // user has to spell peace
             lv4Label.setLayoutX(360);
             lv4Label.setLayoutY(230);
             lv4Label.setTextFill(Color.BLACK);
@@ -254,7 +257,7 @@ public class LevelPane extends Pane {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                         lv4Clicks++;
-                    } else if (lv4Clicks == 4 && eText2.getFill() == letterGreen){
+                    } else if (lv4Clicks == 4 && eText2.getFill() == letterGreen) {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                         lv4Clicks++;
@@ -311,7 +314,7 @@ public class LevelPane extends Pane {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
                         lv4Clicks++;
-                    } else if (lv4Clicks == 4 && eText.getFill() == letterGreen){
+                    } else if (lv4Clicks == 4 && eText.getFill() == letterGreen) {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
                         lv4Clicks++;
@@ -323,7 +326,8 @@ public class LevelPane extends Pane {
                 if (lv4Clicks == 5) {
                     makeLettersGreen();
                     nextLevelButton.setVisible(true);
-                    nextLevelText.setVisible(true);}
+                    nextLevelText.setVisible(true);
+                }
                 nextLevelButton.setOnAction(e -> {
                     // System.out.println("level 3 button clicked");
                     Level levelFive = new Level(5, "thisxthis");
@@ -333,7 +337,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 5) {
-            //user has to click 5th button 5 times 
+            // user has to click 5th button 5 times
             System.out.println("Welcome to level 5!");
             lv5Button1 = new Button("    ");
             lv5Button2 = new Button("    ");
@@ -371,7 +375,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 6) {
-            lv6Label = new Label("nsvee ezor nsvee"); //user has to unscramble enter 707
+            lv6Label = new Label("nsvee ezor nsvee"); // user has to unscramble enter 707
             lv6Label.setLayoutX(360);
             lv6Label.setLayoutY(230);
             lv6Label.setTextFill(Color.BLACK);
@@ -409,6 +413,27 @@ public class LevelPane extends Pane {
                 Level levelSeven = new Level(7, "don't move");
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelSeven));
+            });
+        }
+        if (levelNum == 7) {
+            System.out.println("Welcome to level 7!");
+            Timeline cursorTimer = new Timeline(new KeyFrame(Duration.seconds(7), event -> {
+                // Code to execute after seven seconds of inactivity
+                // System.out.println("Seven seconds of inactivity detected!");
+                makeLettersGreen();
+                nextLevelButton.setVisible(true);
+                nextLevelText.setVisible(true);
+            }));
+            this.setOnMouseMoved(event -> {
+                // Reset the timer every time the mouse is moved
+                cursorTimer.stop();
+                cursorTimer.play();
+            });
+            nextLevelButton.setOnAction(e -> {
+                // System.out.println("level 3 button clicked");
+                Level levelEight = new Level(8, "wrod 2");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelEight));
             });
         }
     }
