@@ -18,7 +18,8 @@ import javafx.scene.text.Text;
  * Based on what Level it takes in, it draws
  * the required components
  * It also handles the logic of the level
- * to go to the next level... I'll cross that bridge when I get there
+ * to go to the next level getChildren().clear()
+ * and add a new LevelPane with the next level
  */
 
 public class LevelPane extends Pane {
@@ -40,6 +41,8 @@ public class LevelPane extends Pane {
     private int lv1Clicks = 0;
     // level 2 components
     private Label lv2Label;
+    // level 3 components
+    private int lv3Clicks = 0;
 
     // constructor
     /**
@@ -187,8 +190,29 @@ public class LevelPane extends Pane {
                 // System.out.println("Clicked at: (" + x + ", " + y + ")");
             });
         }
-        if (levelNum==3) {
+        if (levelNum == 3) {
             System.out.println("Welcome to level 3!");
+            // get the position of a click
+            this.setOnMouseClicked(event -> {
+                double x = event.getSceneX();
+                double y = event.getSceneY();
+                // System.out.println("Clicked at: (" + x + ", " + y + ")");
+                // if the click is in the door
+                if (x >= 30 && x <= 300 && y >= 130 && y <= 400) {
+                    lv3Clicks++;
+                    if (lv3Clicks >= 2) {
+                        makeLettersGreen();
+                        nextLevelButton.setVisible(true);
+                        nextLevelText.setVisible(true);
+
+                    }
+                }
+            });
+            nextLevelButton.setOnAction(e -> {
+                Level levelFour = new Level(4, "Peace");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelFour));
+            });
         }
     }
 
@@ -295,4 +319,13 @@ public class LevelPane extends Pane {
         return true;
     }
 
+    // make all letters green
+    public void makeLettersGreen() {
+        eText.setFill(letterGreen);
+        sText.setFill(letterGreen);
+        cText.setFill(letterGreen);
+        aText.setFill(letterGreen);
+        pText.setFill(letterGreen);
+        eText2.setFill(letterGreen);
+    }
 }

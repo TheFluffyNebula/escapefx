@@ -4,7 +4,6 @@ public class Level {
     //attributes
     private int levelNumber;
     private String levelName;
-    // can be notThereYet, inProgress, or complete
     
     //constructor
     public Level(int levelNumber, String levelName) {
