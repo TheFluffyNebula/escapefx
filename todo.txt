@@ -1,20 +1,26 @@
 1. draw background + door
 2. draw escape letters (gray)
 3. figure out how mouse click location works
+(DONE)
 
 Level One: a button
 Components required: one button
 Solution: click the button six times and the letters light up one by one, from left to right
+(DONE)
 
 Level Two: no button
 Components required: clickable letters, label
 Label says "no button?"
 Solution: click the letters in order to light them up green
+(DONE)
+
+Labels for level name and level numberr
+(DONE)
 
 Level Three: knock knock
 Components required: clickable door, label
-Label says "knock\nknock\nknock"
-Solution: click the door three times
+Label says "knock\nknock"
+Solution: click the door two times
 
 Level Four: PEACE
 Components required: clickable letters, label

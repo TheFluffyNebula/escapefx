@@ -2,6 +2,9 @@ package edu.guilford;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -27,6 +30,7 @@ public class LevelPane extends Pane {
     private Text pText = new Text("P");
     private Text eText2 = new Text("E");
     // general components (always needed)
+    private Label levelLabel; // level number and name
     private Label nextLevelText;
     private Button nextLevelButton;
     Color letterGreen = Color.rgb(1, 252, 3, 1.0);
@@ -34,6 +38,8 @@ public class LevelPane extends Pane {
     // level 1 components
     private Button lv1Button;
     private int lv1Clicks = 0;
+    // level 2 components
+    private Label lv2Label;
 
     // constructor
     /**
@@ -44,8 +50,10 @@ public class LevelPane extends Pane {
      *              Based on what Level it takes in, it draws something different
      */
     public LevelPane(Level level) {
-        drawBackground();
         int levelNum = level.getLevelNumber();
+        String levelName = level.getLevelName();
+        drawBackground(levelNum, levelName);
+        // String levelName = level.getLevelName();
         if (levelNum == 1) {
             System.out.println("Welcome to level 1!");
             // component required: one button + next level button
@@ -95,6 +103,13 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 2) {
+            lv2Label = new Label("no button?");
+            lv2Label.setLayoutX(360);
+            lv2Label.setLayoutY(230);
+            lv2Label.setTextFill(Color.BLACK);
+            lv2Label.setFont(new Font("Arial", 20));
+            lv2Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv2Label);
             System.out.println("Welcome to level 2!");
             // get where the user clicks
             this.setOnMouseClicked(event -> {
@@ -178,7 +193,7 @@ public class LevelPane extends Pane {
     }
 
     // method to draw the backgrorund
-    public void drawBackground() {
+    public void drawBackground(int levelNum, String levelName) {
         // System.out.println("drawBackground() called");
         // dark blue floor
         Shape floor = new Rectangle(0, 400, 640, 80);
@@ -247,6 +262,14 @@ public class LevelPane extends Pane {
         nextLevelText.setFont(new Font("Arial", 20));
         getChildren().add(nextLevelText);
         nextLevelText.setVisible(false);
+
+        // draw the level number and name in the bottom right corner
+        levelLabel = new Label("Level " + levelNum + ": " + levelName);
+        levelLabel.setLayoutX(450);
+        levelLabel.setLayoutY(450);
+        levelLabel.setTextFill(Color.WHITE);
+        levelLabel.setFont(new Font("Arial", 20));
+        getChildren().add(levelLabel);
     }
 
     // check if all letters are green
