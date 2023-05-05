@@ -53,29 +53,30 @@ public class LevelPane extends Pane {
             getChildren().add(lv1Button);
             lv1Button.setOnAction(e -> {
                 lv1Clicks++;
+                Color letterGreen = Color.rgb(1,252,3,1.0);
                 switch (lv1Clicks) {
                     case 1:
-                        eText.setFill(Color.GREEN);
+                        eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                         break;
                     case 2:
-                        sText.setFill(Color.GREEN);
+                        sText.setFill(letterGreen);
                         sText.setOpacity(1.0);
                         break;
                     case 3:
-                        cText.setFill(Color.GREEN);
+                        cText.setFill(letterGreen);
                         cText.setOpacity(1.0);
                         break;
                     case 4:
-                        aText.setFill(Color.GREEN);
+                        aText.setFill(letterGreen);
                         aText.setOpacity(1.0);
                         break;
                     case 5:
-                        pText.setFill(Color.GREEN);
+                        pText.setFill(letterGreen);
                         pText.setOpacity(1.0);
                         break;
                     case 6:
-                        eText2.setFill(Color.GREEN);
+                        eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
                         nextLevelButton.setVisible(true);
                         nextLevelText.setVisible(true);
@@ -84,6 +85,15 @@ public class LevelPane extends Pane {
                         break;
                 }
             });
+            nextLevelButton.setOnAction(e -> {
+                System.out.println("next level button clicked");
+                Level levelTwo = new Level(2, "no button");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelTwo));
+            });
+        }
+        if (levelNum == 2) {
+            System.out.println("Welcome to level 2!");
         }
     }
 
