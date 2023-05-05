@@ -22,7 +22,8 @@ public class Driver extends Application {
 
         //instantiate a new Level object
         //toggle this to start at a later level
-        Level levelOne = new Level(1, "a button");
+        //level 1: 1, "a button"
+        Level levelOne = new Level(6, "wrod");
 
         //instantiate levelPane object, add it to the root node
         root.getChildren().add(new LevelPane(levelOne));

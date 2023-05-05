@@ -2,6 +2,7 @@ package edu.guilford;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -55,6 +56,9 @@ public class LevelPane extends Pane {
     private Button lv5Button4;
     private Button lv5Button5;
     // level 6 components
+    private Label lv6Label;
+    private TextField lv6TextField;
+    private Button lv6SubmitButton;
 
     // constructor
     /**
@@ -364,6 +368,47 @@ public class LevelPane extends Pane {
                 Level levelSix = new Level(6, "wrod");
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelSix));
+            });
+        }
+        if (levelNum == 6) {
+            lv6Label = new Label("nsvee ezor nsvee"); //user has to unscramble enter 707
+            lv6Label.setLayoutX(360);
+            lv6Label.setLayoutY(230);
+            lv6Label.setTextFill(Color.BLACK);
+            lv6Label.setFont(new Font("Arial", 20));
+            lv6Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv6Label);
+            System.out.println("Welcome to level 6!");
+            lv6TextField = new TextField();
+            lv6TextField.setLayoutX(385);
+            lv6TextField.setLayoutY(280);
+            lv6TextField.setPrefWidth(100);
+            lv6TextField.setPrefHeight(50);
+            lv6TextField.setFont(new Font("Arial", 20));
+            getChildren().add(lv6TextField);
+            lv6SubmitButton = new Button("submit");
+            lv6SubmitButton.setLayoutX(385);
+            lv6SubmitButton.setLayoutY(340);
+            lv6SubmitButton.setPrefWidth(100);
+            lv6SubmitButton.setPrefHeight(50);
+            lv6SubmitButton.setFont(new Font("Arial", 20));
+            getChildren().add(lv6SubmitButton);
+            // listener for submit button
+            lv6SubmitButton.setOnAction(e -> {
+                String input = lv6TextField.getText();
+                if (input.equals("707")) {
+                    makeLettersGreen();
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);
+                } else {
+                    lv6TextField.setText("");
+                }
+            });
+            nextLevelButton.setOnAction(e -> {
+                // System.out.println("level 3 button clicked");
+                Level levelSeven = new Level(7, "don't move");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelSeven));
             });
         }
     }
