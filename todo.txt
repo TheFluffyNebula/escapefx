@@ -11,7 +11,7 @@ Components required: clickable letters, label
 Label says "no button?"
 Solution: click the letters in order to light them up green
 
-Level Three: knock x3
+Level Three: knock knock
 Components required: clickable door, label
 Label says "knock\nknock\nknock"
 Solution: click the door three times

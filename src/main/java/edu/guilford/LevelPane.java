@@ -29,6 +29,8 @@ public class LevelPane extends Pane {
     // general components (always needed)
     private Label nextLevelText;
     private Button nextLevelButton;
+    Color letterGreen = Color.rgb(1, 252, 3, 1.0);
+    Color letterGray = Color.rgb(128, 128, 128, 1.0);
     // level 1 components
     private Button lv1Button;
     private int lv1Clicks = 0;
@@ -38,13 +40,14 @@ public class LevelPane extends Pane {
      * This constructor takes in a Level object
      * 
      * @param level
-     * It always draws the background (elements present in all levels)
-     * Based on what Level it takes in, it draws something different
+     *              It always draws the background (elements present in all levels)
+     *              Based on what Level it takes in, it draws something different
      */
     public LevelPane(Level level) {
         drawBackground();
         int levelNum = level.getLevelNumber();
         if (levelNum == 1) {
+            System.out.println("Welcome to level 1!");
             // component required: one button + next level button
             lv1Button = new Button("    ");
             lv1Button.setLayoutX(360);
@@ -53,7 +56,6 @@ public class LevelPane extends Pane {
             getChildren().add(lv1Button);
             lv1Button.setOnAction(e -> {
                 lv1Clicks++;
-                Color letterGreen = Color.rgb(1,252,3,1.0);
                 switch (lv1Clicks) {
                     case 1:
                         eText.setFill(letterGreen);
@@ -86,7 +88,7 @@ public class LevelPane extends Pane {
                 }
             });
             nextLevelButton.setOnAction(e -> {
-                System.out.println("next level button clicked");
+                // System.out.println("next level button clicked");
                 Level levelTwo = new Level(2, "no button");
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelTwo));
@@ -94,6 +96,84 @@ public class LevelPane extends Pane {
         }
         if (levelNum == 2) {
             System.out.println("Welcome to level 2!");
+            // get where the user clicks
+            this.setOnMouseClicked(event -> {
+                double x = event.getSceneX();
+                double y = event.getSceneY();
+                if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
+                    if (eText.getFill() == letterGreen) {
+                        eText.setFill(letterGray);
+                        eText.setOpacity(0.5);
+                    } else {
+                        eText.setFill(letterGreen);
+                        eText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
+                    if (sText.getFill() == letterGreen) {
+                        sText.setFill(letterGray);
+                        sText.setOpacity(0.5);
+                    } else {
+                        sText.setFill(letterGreen);
+                        sText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
+                    if (cText.getFill() == letterGreen) {
+                        cText.setFill(letterGray);
+                        cText.setOpacity(0.5);
+                    } else {
+                        cText.setFill(letterGreen);
+                        cText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 170 && x <= 200 && y >= 50 && y <= 100) {
+                    if (aText.getFill() == letterGreen) {
+                        aText.setFill(letterGray);
+                        aText.setOpacity(0.5);
+                    } else {
+                        aText.setFill(letterGreen);
+                        aText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 210 && x <= 240 && y >= 50 && y <= 100) {
+                    if (pText.getFill() == letterGreen) {
+                        pText.setFill(letterGray);
+                        pText.setOpacity(0.5);
+                    } else {
+                        pText.setFill(letterGreen);
+                        pText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
+                    if (eText2.getFill() == letterGreen) {
+                        eText2.setFill(letterGray);
+                        eText2.setOpacity(0.5);
+                    } else {
+                        eText2.setFill(letterGreen);
+                        eText2.setOpacity(1.0);
+                    }
+                }
+                if (allLettersGreen()) {
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);
+                }
+                nextLevelButton.setOnAction(e -> {
+                    // System.out.println("level 3 button clicked");
+                    Level levelThree = new Level(3, "knock knock");
+                    getChildren().clear();
+                    getChildren().add(new LevelPane(levelThree));
+                });
+                // System.out.println("Clicked at: (" + x + ", " + y + ")");
+            });
+        }
+        if (levelNum==3) {
+            System.out.println("Welcome to level 3!");
         }
     }
 
@@ -118,27 +198,27 @@ public class LevelPane extends Pane {
         eText.setFill(Color.GRAY);
         eText.setX(50);
         eText.setY(100);
-        
+
         sText.setFont(new Font("Arial", 60));
         sText.setFill(Color.GRAY);
         sText.setX(90);
         sText.setY(100);
-        
+
         cText.setFont(new Font("Arial", 60));
         cText.setFill(Color.GRAY);
         cText.setX(130);
         cText.setY(100);
-        
+
         aText.setFont(new Font("Arial", 60));
         aText.setFill(Color.GRAY);
         aText.setX(170);
         aText.setY(100);
-        
+
         pText.setFont(new Font("Arial", 60));
         pText.setFill(Color.GRAY);
         pText.setX(210);
         pText.setY(100);
-        
+
         eText2.setFont(new Font("Arial", 60));
         eText2.setFill(Color.GRAY);
         eText2.setX(250);
@@ -168,4 +248,28 @@ public class LevelPane extends Pane {
         getChildren().add(nextLevelText);
         nextLevelText.setVisible(false);
     }
+
+    // check if all letters are green
+    public boolean allLettersGreen() {
+        if (eText.getFill() != letterGreen) {
+            return false;
+        }
+        if (sText.getFill() != letterGreen) {
+            return false;
+        }
+        if (cText.getFill() != letterGreen) {
+            return false;
+        }
+        if (aText.getFill() != letterGreen) {
+            return false;
+        }
+        if (pText.getFill() != letterGreen) {
+            return false;
+        }
+        if (eText2.getFill() != letterGreen) {
+            return false;
+        }
+        return true;
+    }
+
 }
