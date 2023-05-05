@@ -30,8 +30,7 @@ Solution: click the letters in order to light them up green
 (DONE)
 
 Level Five: thisxthis
-Components required: clickable letters, label
-Label says "5x5"
+Components required: 5 buttons
 Solution: click the fifth button five times, etc.
 (DONE)
 
@@ -39,12 +38,13 @@ Level 6: Wrod
 Components required: label, text field, submit button
 Label says "nsveeezornsvee" (707)
 Solution: Enter 707 into the textfield
-(IN PROGRESS)
+(DONE)
 
 Level 7: don't move
 Components required: label
 Label says "don't move"
 Solution: don't move
+(IN PROGRESS)
 
 Level 8: aeong
 Components required: 5 buttons: e i g h t -> t i h e g
