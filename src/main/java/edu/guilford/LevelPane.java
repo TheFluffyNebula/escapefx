@@ -44,6 +44,9 @@ public class LevelPane extends Pane {
     // level 3 components
     private int lv3Clicks = 0;
     private Label lv3Label;
+    // level 4 components
+    private int lv4Clicks = 0;
+    private Label lv4Label;
 
     // constructor
     /**
@@ -59,7 +62,7 @@ public class LevelPane extends Pane {
         drawBackground(levelNum, levelName);
         // String levelName = level.getLevelName();
         if (levelNum == 1) {
-            System.out.println("Welcome to level 1!");
+            System.out.println("Welcome to level 1!"); // user has to click the button 6 times
             // component required: one button + next level button
             lv1Button = new Button("    ");
             lv1Button.setLayoutX(360);
@@ -107,7 +110,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 2) {
-            lv2Label = new Label("no button?");
+            lv2Label = new Label("no button?"); //user has to click all the letters
             lv2Label.setLayoutX(360);
             lv2Label.setLayoutY(230);
             lv2Label.setTextFill(Color.BLACK);
@@ -192,7 +195,7 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 3) {
-            lv3Label = new Label("knock\nknock");
+            lv3Label = new Label("knock\nknock"); //user has to click the door twice
             lv3Label.setLayoutX(360);
             lv3Label.setLayoutY(230);
             lv3Label.setTextFill(Color.BLACK);
@@ -221,6 +224,104 @@ public class LevelPane extends Pane {
                 getChildren().clear();
                 getChildren().add(new LevelPane(levelFour));
             });
+        }
+        if (levelNum == 4) {
+            lv4Label = new Label("PEACE"); //user has to spell peace
+            lv4Label.setLayoutX(360);
+            lv4Label.setLayoutY(230);
+            lv4Label.setTextFill(Color.BLACK);
+            lv4Label.setFont(new Font("Arial", 20));
+            lv4Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv4Label);
+            System.out.println("Welcome to level 4!");
+            this.setOnMouseClicked(event -> {
+                double x = event.getSceneX();
+                double y = event.getSceneY();
+                if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
+                    if (lv4Clicks == 1) {
+                        eText.setFill(letterGreen);
+                        eText.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else if (lv4Clicks == 4 && eText2.getFill() == letterGreen){
+                        eText.setFill(letterGreen);
+                        eText.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else {
+                        lv4Clicks = 0;
+                        makeLettersGray();
+                    }
+                }
+
+                if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
+                    if (sText.getFill() == letterGreen) {
+                        sText.setFill(letterGray);
+                        sText.setOpacity(0.5);
+                    } else {
+                        sText.setFill(letterGreen);
+                        sText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
+                    if (lv4Clicks == 3) {
+                        cText.setFill(letterGreen);
+                        cText.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else {
+                        lv4Clicks = 0;
+                        makeLettersGray();
+                    }
+                }
+
+                if (x >= 170 && x <= 200 && y >= 50 && y <= 100) {
+                    if (lv4Clicks == 2) {
+                        aText.setFill(letterGreen);
+                        aText.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else {
+                        lv4Clicks = 0;
+                        makeLettersGray();
+                    }
+                }
+
+                if (x >= 210 && x <= 240 && y >= 50 && y <= 100) {
+                    if (lv4Clicks == 0) {
+                        pText.setFill(letterGreen);
+                        pText.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else {
+                        makeLettersGray();
+                    }
+                }
+
+                if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
+                    if (lv4Clicks == 1) {
+                        eText2.setFill(letterGreen);
+                        eText2.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else if (lv4Clicks == 4 && eText.getFill() == letterGreen){
+                        eText2.setFill(letterGreen);
+                        eText2.setOpacity(1.0);
+                        lv4Clicks++;
+                    } else {
+                        lv4Clicks = 0;
+                        makeLettersGray();
+                    }
+                }
+                if (lv4Clicks == 5) {
+                    makeLettersGreen();
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);}
+                nextLevelButton.setOnAction(e -> {
+                    // System.out.println("level 3 button clicked");
+                    Level levelFive = new Level(5, "thisxthis");
+                    getChildren().clear();
+                    getChildren().add(new LevelPane(levelFive));
+                });
+            });
+        }
+        if (levelNum == 5) {
+            
         }
     }
 
@@ -335,5 +436,15 @@ public class LevelPane extends Pane {
         aText.setFill(letterGreen);
         pText.setFill(letterGreen);
         eText2.setFill(letterGreen);
+    }
+
+    // make all letters gray
+    public void makeLettersGray() {
+        eText.setFill(letterGray);
+        sText.setFill(letterGray);
+        cText.setFill(letterGray);
+        aText.setFill(letterGray);
+        pText.setFill(letterGray);
+        eText2.setFill(letterGray);
     }
 }
