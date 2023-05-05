@@ -22,6 +22,11 @@ public class Driver extends Application {
     public void start(Stage stage) throws IOException {
         VBox root = new VBox();
 
+        //instantiate a new Level object
+        Level levelOne = new Level(1, "a button");
+
+        //instantiate levelPane object, add it to the root node
+        root.getChildren().add(new LevelPane(levelOne));
         scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
