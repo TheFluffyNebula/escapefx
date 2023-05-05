@@ -27,17 +27,19 @@ Level Four: PEACE
 Components required: clickable letters, label
 Label says "PEACE"
 Solution: click the letters in order to light them up green
-(IN PROGRESS)
+(DONE)
 
-Level Five: 1x1, 2x2...
+Level Five: thisxthis
 Components required: clickable letters, label
-Label says "1x1, 2x2..."
-Solution: click the first letter 1 time, etc.
+Label says "5x5"
+Solution: click the fifth button five times, etc.
+(DONE)
 
 Level 6: Wrod
 Components required: label, text field, submit button
 Label says "nsveeezornsvee" (707)
 Solution: Enter 707 into the textfield
+(IN PROGRESS)
 
 Level 7: don't move
 Components required: label

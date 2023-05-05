@@ -47,6 +47,14 @@ public class LevelPane extends Pane {
     // level 4 components
     private int lv4Clicks = 0;
     private Label lv4Label;
+    // level 5 components
+    private int lv5Clicks = 0;
+    private Button lv5Button1;
+    private Button lv5Button2;
+    private Button lv5Button3;
+    private Button lv5Button4;
+    private Button lv5Button5;
+    // level 6 components
 
     // constructor
     /**
@@ -321,7 +329,42 @@ public class LevelPane extends Pane {
             });
         }
         if (levelNum == 5) {
-            
+            //user has to click 5th button 5 times 
+            System.out.println("Welcome to level 5!");
+            lv5Button1 = new Button("    ");
+            lv5Button2 = new Button("    ");
+            lv5Button3 = new Button("    ");
+            lv5Button4 = new Button("    ");
+            lv5Button5 = new Button("    ");
+            lv5Button1.setLayoutX(360);
+            lv5Button1.setLayoutY(230);
+            lv5Button2.setLayoutX(400);
+            lv5Button2.setLayoutY(230);
+            lv5Button3.setLayoutX(440);
+            lv5Button3.setLayoutY(230);
+            lv5Button4.setLayoutX(480);
+            lv5Button4.setLayoutY(230);
+            lv5Button5.setLayoutX(520);
+            lv5Button5.setLayoutY(230);
+            getChildren().add(lv5Button1);
+            getChildren().add(lv5Button2);
+            getChildren().add(lv5Button3);
+            getChildren().add(lv5Button4);
+            getChildren().add(lv5Button5);
+            lv5Button5.setOnAction(e -> {
+                lv5Clicks++;
+                if (lv5Clicks == 5) {
+                    makeLettersGreen();
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);
+                }
+            });
+            nextLevelButton.setOnAction(e -> {
+                // System.out.println("level 3 button clicked");
+                Level levelSix = new Level(6, "wrod");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelSix));
+            });
         }
     }
 
