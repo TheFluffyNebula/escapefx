@@ -58,14 +58,16 @@ Level 9: no button 2
 Components required: clickable letters
 Solution: click the letters such that all lights turn green
 The simplest solution is to click letters 2 and 5
+(DONE)
+
+Level 10: 123... (35 from 40x)
+Components required: however many that was
+Solution: ottffssent
 (IN PROGRESS)
 
-Level 10: two buttons
+Level 11: two buttons
 Components required: two buttons
 Solution: first button makes a letter green, second moves the green letter right
 
 level selector (eek!)
 
-Level 11: 35 from 40x
-Components required: however many that was
-Solution: ottffssent

@@ -52,7 +52,7 @@ public class LevelPane extends Pane {
     private int lv3Clicks = 0;
     private Label lv3Label;
     // level 4 components
-    private int lv4Clicks = 0; //progress tracker
+    private int lv4Clicks = 0; // progress tracker
     private Label lv4Label;
     // level 5 components
     private int lv5Clicks = 0;
@@ -63,7 +63,7 @@ public class LevelPane extends Pane {
     private Button lv6SubmitButton;
     // level 8 components
     private Label lv8Label;
-    private int lv8Clicks = 0; //progress tracker
+    private int lv8Clicks = 0; // progress tracker
     private Button lv8Button1;
     private Button lv8Button2;
     private Button lv8Button3;
@@ -347,12 +347,12 @@ public class LevelPane extends Pane {
         if (levelNum == 5) {
             // user has to click 5th button 5 times
             System.out.println("Welcome to level 5!");
-            Button[] lv5Buttons = new Button[]{
-                new Button("    "),
-                new Button("    "),
-                new Button("    "),
-                new Button("    "),
-                lv5Button5 = new Button("    ")
+            Button[] lv5Buttons = new Button[] {
+                    new Button("    "),
+                    new Button("    "),
+                    new Button("    "),
+                    new Button("    "),
+                    lv5Button5 = new Button("    ")
             };
 
             for (int i = 0; i < lv5Buttons.length; i++) {
@@ -448,12 +448,12 @@ public class LevelPane extends Pane {
             getChildren().add(lv8Label);
             System.out.println("Welcome to level 8!");
             Font buttonFont = new Font("Arial", 12);
-            Button[] lv8Buttons = new Button[]{
-                lv8Button1 = new Button("  t  "),
-                lv8Button2 = new Button("  i  "),
-                lv8Button3 = new Button("  h  "),
-                lv8Button4 = new Button("  e  "),
-                lv8Button5 = new Button("  g  ")
+            Button[] lv8Buttons = new Button[] {
+                    lv8Button1 = new Button("  t  "),
+                    lv8Button2 = new Button("  i  "),
+                    lv8Button3 = new Button("  h  "),
+                    lv8Button4 = new Button("  e  "),
+                    lv8Button5 = new Button("  g  ")
             };
 
             for (int i = 0; i < lv8Buttons.length; i++) {
@@ -462,8 +462,8 @@ public class LevelPane extends Pane {
                 lv8Buttons[i].setFont(buttonFont);
                 getChildren().add(lv8Buttons[i]);
             }
-            
-            //listeners for each button
+
+            // listeners for each button
             lv8Button1.setOnAction(e -> {
                 if (lv8Clicks == 4) {
                     makeLettersGreen();
@@ -510,6 +510,150 @@ public class LevelPane extends Pane {
         }
         if (levelNum == 9) {
             System.out.println("Welcome to level 9!");
+            this.setOnMouseClicked(event -> {
+                double x = event.getSceneX();
+                double y = event.getSceneY();
+                if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
+                    if (eText.getFill() == letterGreen) {
+                        eText.setFill(letterGray);
+                        eText.setOpacity(0.5);
+                    } else {
+                        eText.setFill(letterGreen);
+                        eText.setOpacity(1.0);
+                    }
+                    if (sText.getFill() == letterGreen) {
+                        sText.setFill(letterGray);
+                        sText.setOpacity(0.5);
+                    } else {
+                        sText.setFill(letterGreen);
+                        sText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
+                    if (eText.getFill() == letterGreen) {
+                        eText.setFill(letterGray);
+                        eText.setOpacity(0.5);
+                    } else {
+                        eText.setFill(letterGreen);
+                        eText.setOpacity(1.0);
+                    }
+                    if (sText.getFill() == letterGreen) {
+                        sText.setFill(letterGray);
+                        sText.setOpacity(0.5);
+                    } else {
+                        sText.setFill(letterGreen);
+                        sText.setOpacity(1.0);
+                    }
+                    if (cText.getFill() == letterGreen) {
+                        cText.setFill(letterGray);
+                        cText.setOpacity(0.5);
+                    } else {
+                        cText.setFill(letterGreen);
+                        cText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
+                    if (sText.getFill() == letterGreen) {
+                        sText.setFill(letterGray);
+                        sText.setOpacity(0.5);
+                    } else {
+                        sText.setFill(letterGreen);
+                        sText.setOpacity(1.0);
+                    }
+                    if (cText.getFill() == letterGreen) {
+                        cText.setFill(letterGray);
+                        cText.setOpacity(0.5);
+                    } else {
+                        cText.setFill(letterGreen);
+                        cText.setOpacity(1.0);
+                    }
+                    if (aText.getFill() == letterGreen) {
+                        aText.setFill(letterGray);
+                        aText.setOpacity(0.5);
+                    } else {
+                        aText.setFill(letterGreen);
+                        aText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 170 && x <= 200 && y >= 50 && y <= 100) {
+                    if (cText.getFill() == letterGreen) {
+                        cText.setFill(letterGray);
+                        cText.setOpacity(0.5);
+                    } else {
+                        cText.setFill(letterGreen);
+                        cText.setOpacity(1.0);
+                    }
+                    if (aText.getFill() == letterGreen) {
+                        aText.setFill(letterGray);
+                        aText.setOpacity(0.5);
+                    } else {
+                        aText.setFill(letterGreen);
+                        aText.setOpacity(1.0);
+                    }
+                    if (pText.getFill() == letterGreen) {
+                        pText.setFill(letterGray);
+                        pText.setOpacity(0.5);
+                    } else {
+                        pText.setFill(letterGreen);
+                        pText.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 210 && x <= 240 && y >= 50 && y <= 100) {
+                    if (aText.getFill() == letterGreen) {
+                        aText.setFill(letterGray);
+                        aText.setOpacity(0.5);
+                    } else {
+                        aText.setFill(letterGreen);
+                        aText.setOpacity(1.0);
+                    }
+                    if (pText.getFill() == letterGreen) {
+                        pText.setFill(letterGray);
+                        pText.setOpacity(0.5);
+                    } else {
+                        pText.setFill(letterGreen);
+                        pText.setOpacity(1.0);
+                    }
+                    if (eText2.getFill() == letterGreen) {
+                        eText2.setFill(letterGray);
+                        eText2.setOpacity(0.5);
+                    } else {
+                        eText2.setFill(letterGreen);
+                        eText2.setOpacity(1.0);
+                    }
+                }
+
+                if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
+                    if (eText2.getFill() == letterGreen) {
+                        eText2.setFill(letterGray);
+                        eText2.setOpacity(0.5);
+                    } else {
+                        eText2.setFill(letterGreen);
+                        eText2.setOpacity(1.0);
+                    }
+                    if (pText.getFill() == letterGreen) {
+                        pText.setFill(letterGray);
+                        pText.setOpacity(0.5);
+                    } else {
+                        pText.setFill(letterGreen);
+                        pText.setOpacity(1.0);
+                    }
+                }
+                if (allLettersGreen()) {
+                    nextLevelButton.setVisible(true);
+                    nextLevelText.setVisible(true);
+                }
+                nextLevelButton.setOnAction(e -> {
+                    // System.out.println("level 3 button clicked");
+                    Level levelTen = new Level(10, "123...");
+                    getChildren().clear();
+                    getChildren().add(new LevelPane(levelTen));
+                });
+                // System.out.println("Clicked at: (" + x + ", " + y + ")");
+            });
         }
 
     }
