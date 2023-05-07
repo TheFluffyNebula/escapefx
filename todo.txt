@@ -59,13 +59,9 @@ The simplest solution is to click letters 2 and 5
 (DONE)
 
 Level 10: 123... (35 from 40x)
-Components required: however many that was
+Components required: o t f s e n
 Solution: ottffssent
+(DONE)
+
+level selector
 (IN PROGRESS)
-
-Level 11: two buttons
-Components required: two buttons
-Solution: first button makes a letter green, second moves the green letter right
-
-level selector (eek!)
-

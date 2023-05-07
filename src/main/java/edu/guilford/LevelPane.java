@@ -73,7 +73,16 @@ public class LevelPane extends Pane {
     private Button lv8Button4;
     private Button lv8Button5;
     // level 10 components
+    private Label lv10Label;
+    private int lv10Clicks = 0; // progress tracker
+    private Button lv10Button1;
+    private Button lv10Button2;
+    private Button lv10Button3;
+    private Button lv10Button4;
+    private Button lv10Button5;
+    private Button lv10Button6;
 
+    // level 11 components
     // constructor
     /**
      * This constructor takes in a Level object
@@ -670,6 +679,91 @@ public class LevelPane extends Pane {
                     getChildren().add(new LevelPane(levelTen));
                 });
                 // System.out.println("Clicked at: (" + x + ", " + y + ")");
+            });
+        }
+        if (levelNum == 10) {
+            System.out.println("Welcome to level 10!");
+            lv10Label = new Label("123..."); // user has to click ottffssent
+            lv10Label.setLayoutX(360);
+            lv10Label.setLayoutY(230);
+            lv10Label.setTextFill(Color.BLACK);
+            lv10Label.setFont(new Font("Arial", 20));
+            lv10Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv10Label);
+            Font buttonFont = new Font("Arial", 12);
+            Button[] lv10Buttons = new Button[] {
+                    lv10Button1 = new Button("  o  "),
+                    lv10Button2 = new Button("  t  "),
+                    lv10Button3 = new Button("  f  "),
+                    lv10Button4 = new Button("  s  "),
+                    lv10Button5 = new Button("  e  "),
+                    lv10Button6 = new Button("  n  ")
+            };
+            for (int i = 0; i < lv10Buttons.length; i++) {
+                lv10Buttons[i].setLayoutX(360 + i * 40);
+                lv10Buttons[i].setLayoutY(280);
+                lv10Buttons[i].setFont(buttonFont);
+                getChildren().add(lv10Buttons[i]);
+            }
+            // listeners for each button
+            lv10Button1.setOnAction(e -> {
+                if (lv10Clicks == 0) {
+                    lv10Clicks++;
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            lv10Button2.setOnAction(e -> {
+                if (lv10Clicks == 1 || lv10Clicks == 2 || lv10Clicks == 9) {
+                    lv10Clicks++;
+                    if (lv10Clicks == 10) {
+                        makeLettersGreen();
+                        nextLevelButton.setVisible(true);
+                        nextLevelText.setVisible(true);
+                    }
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            lv10Button3.setOnAction(e -> {
+                if (lv10Clicks == 3 | lv10Clicks == 4) {
+                    lv10Clicks++;
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            lv10Button4.setOnAction(e -> {
+                if (lv10Clicks == 5 || lv10Clicks == 6) {
+                    lv10Clicks++;
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            lv10Button5.setOnAction(e -> {
+                if (lv10Clicks == 7) {
+                    lv10Clicks++;
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            lv10Button6.setOnAction(e -> {
+                if (lv10Clicks == 8) {
+                    lv10Clicks++;
+                } else {
+                    lv10Clicks = 0;
+                }
+                System.out.println(lv10Clicks);
+            });
+            nextLevelButton.setOnAction(e -> {
+                // System.out.println("level 3 button clicked");
+                Level levelEleven = new Level(11, "two buttons");
+                getChildren().clear();
+                getChildren().add(new LevelPane(levelEleven));
             });
         }
 
