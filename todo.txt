@@ -52,8 +52,6 @@ Label says "this"
 Solution: click the buttons in the right order
 (DONE)
 
-go back and add labels for levels 5 and 7 (in progress)
-
 Level 9: no button 2
 Components required: clickable letters
 Solution: click the letters such that all lights turn green

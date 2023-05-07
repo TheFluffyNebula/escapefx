@@ -57,10 +57,13 @@ public class LevelPane extends Pane {
     // level 5 components
     private int lv5Clicks = 0;
     private Button lv5Button5;
+    private Label lv5Label;
     // level 6 components
     private Label lv6Label;
     private TextField lv6TextField;
     private Button lv6SubmitButton;
+    // level 7 components
+    private Label lv7Label;
     // level 8 components
     private Label lv8Label;
     private int lv8Clicks = 0; // progress tracker
@@ -360,7 +363,14 @@ public class LevelPane extends Pane {
                 lv5Buttons[i].setLayoutY(280);
                 getChildren().add(lv5Buttons[i]);
             }
-
+            // label above the buttons
+            lv5Label = new Label("thisxthis");
+            lv5Label.setLayoutX(420);
+            lv5Label.setLayoutY(230);
+            lv5Label.setTextFill(Color.BLACK);
+            lv5Label.setFont(new Font("Arial", 20));
+            lv5Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv5Label);
             lv5Button5.setOnAction(e -> {
                 lv5Clicks++;
                 if (lv5Clicks == 5) {
@@ -419,6 +429,13 @@ public class LevelPane extends Pane {
         }
         if (levelNum == 7) {
             System.out.println("Welcome to level 7!");
+            lv7Label = new Label("don't\nmove");
+            lv7Label.setLayoutX(420);
+            lv7Label.setLayoutY(230);
+            lv7Label.setTextFill(Color.BLACK);
+            lv7Label.setFont(new Font("Arial", 20));
+            lv7Label.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), null)));
+            getChildren().add(lv7Label);
             Timeline cursorTimer = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
                 // Code to execute after five seconds of inactivity
                 // System.out.println("Five seconds of inactivity detected!");
