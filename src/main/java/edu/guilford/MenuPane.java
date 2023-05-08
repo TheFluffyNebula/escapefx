@@ -24,18 +24,6 @@ public class MenuPane extends Pane {
     // constructor
     public MenuPane() {
         drawMenuBG();
-
-    }
-
-    private void drawMenuBG() {
-        // dark blue floor
-        Shape floor = new Rectangle(0, 400, 640, 80);
-        floor.setFill(Color.rgb(22, 72, 73, 1.0));
-        getChildren().add(floor);
-        // draw light blue wall
-        Shape wall = new Rectangle(0, 0, 640, 400);
-        wall.setFill(Color.rgb(73, 157, 159, 1.0));
-        getChildren().add(wall);
         // initialize attributes
         levelList = new ArrayList<>(); // Create new ArrayList object
         levelList.add(new Level(1, "a button"));
@@ -86,6 +74,39 @@ public class MenuPane extends Pane {
         getChildren().add(startFromButton);
         getChildren().add(levelSelectField);
         getChildren().add(exitButton);
+        // listeners
+        // new game button
+        newGameButton.setOnAction(e -> {
+            // start from level 1
+            Level levelOne = new Level(1, "a button");
+            getChildren().clear();
+            getChildren().add(new LevelPane(levelOne));
+        });
+        // start from level button
+        startFromButton.setOnAction(e -> {
+            // get the level number from the text field
+            int levelNum = Integer.parseInt(levelSelectField.getText());
+            // get the level from the level list
+            Level level = levelList.get(levelNum - 1);
+            // clear the pane and add the level pane
+            getChildren().clear();
+            getChildren().add(new LevelPane(level));
+        });
+        // exit button
+        exitButton.setOnAction(e -> {
+            System.exit(0);
+        });
+    }
+
+    private void drawMenuBG() {
+        // dark blue floor
+        Shape floor = new Rectangle(0, 400, 640, 80);
+        floor.setFill(Color.rgb(22, 72, 73, 1.0));
+        getChildren().add(floor);
+        // draw light blue wall
+        Shape wall = new Rectangle(0, 0, 640, 400);
+        wall.setFill(Color.rgb(73, 157, 159, 1.0));
+        getChildren().add(wall);
     }
 
 }
