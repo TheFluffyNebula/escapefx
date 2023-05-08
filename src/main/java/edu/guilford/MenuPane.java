@@ -84,6 +84,7 @@ public class MenuPane extends Pane {
         });
         // start from level button
         startFromButton.setOnAction(e -> {
+            try {
             // get the level number from the text field
             int levelNum = Integer.parseInt(levelSelectField.getText());
             // get the level from the level list
@@ -91,6 +92,9 @@ public class MenuPane extends Pane {
             // clear the pane and add the level pane
             getChildren().clear();
             getChildren().add(new LevelPane(level));
+            } catch (Exception ex) {
+                System.out.println("Invalid level number");
+            }
         });
         // exit button
         exitButton.setOnAction(e -> {
