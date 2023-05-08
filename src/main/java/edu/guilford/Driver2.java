@@ -7,26 +7,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**@author Jason Yin
- * @version 1.0
- * This is an imitation of the game 40x Escape. 
- * The goal of the game is to escape the room by solving the puzzle.
- */
-public class Driver extends Application {
-
+public class Driver2 extends Application {
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
         VBox root = new VBox();
 
-        //instantiate a new Level object
-        //toggle this to start at a later level
-        //level 1: 1, "a button"
-        Level levelOne = new Level(1, "wrod 2");
+        //instead of starting at level 1, make a menu screen
 
         //instantiate levelPane object, add it to the root node
-        root.getChildren().add(new LevelPane(levelOne));
+        root.getChildren().add(new MenuPane());
         scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
@@ -35,5 +26,4 @@ public class Driver extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
