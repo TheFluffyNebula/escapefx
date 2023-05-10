@@ -5,65 +5,55 @@
 
 Level One: a button
 Components required: one button
-Solution: click the button six times and the letters light up one by one, from left to right
 (DONE)
 
 Level Two: no button
 Components required: clickable letters, label
 Label says "no button?"
-Solution: click the letters in order to light them up green
-(DONE)
-
-Labels for level name and level numberr
 (DONE)
 
 Level Three: knock knock
 Components required: clickable door, label
 Label says "knock\nknock"
-Solution: click the door two times
 (DONE)
 
 Level Four: PEACE
 Components required: clickable letters, label
 Label says "PEACE"
-Solution: click the letters in order to light them up green
 (DONE)
 
 Level Five: thisxthis
 Components required: 5 buttons
-Solution: click the fifth button five times, etc.
 (DONE)
 
 Level 6: Wrod
 Components required: label, text field, submit button
 Label says "nsveeezornsvee" (707)
-Solution: Enter 707 into the textfield
 (DONE)
 
 Level 7: don't move
 Components required: label
 Label says "don't move"
-Solution: don't move
 (DONE)
 
 Level 8: wrod 2
 Components required: 5 buttons: e i g h t -> t i h e g
 Label says "this"
-Solution: click the buttons in the right order
 (DONE)
 
 Level 9: no button 2
 Components required: clickable letters
-Solution: click the letters such that all lights turn green
-The simplest solution is to click letters 2 and 5
 (DONE)
 
 Level 10: 123... (35 from 40x)
 Components required: o t f s e n
-Solution: ottffssent
 (DONE)
 
 level selector
 (DONE)
 
-level 11?
+solutions, back button
+(DONE)
+
+final screen <FinalPane>: credits
+(IN PROGRESS)

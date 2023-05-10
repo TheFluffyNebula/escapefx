@@ -41,6 +41,7 @@ public class LevelPane extends Pane {
     private Label levelLabel; // level number and name
     private Label nextLevelText;
     private Button nextLevelButton;
+    private Button backButton;
     Color letterGreen = Color.rgb(1, 252, 3, 1.0);
     Color letterGray = Color.rgb(128, 128, 128, 1.0);
     // level 1 components
@@ -288,13 +289,8 @@ public class LevelPane extends Pane {
                 }
 
                 if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
-                    if (sText.getFill() == letterGreen) {
-                        sText.setFill(letterGray);
-                        sText.setOpacity(0.5);
-                    } else {
-                        sText.setFill(letterGreen);
-                        sText.setOpacity(1.0);
-                    }
+                    // s clicked
+                    makeLettersGray();
                 }
 
                 if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
@@ -820,6 +816,20 @@ public class LevelPane extends Pane {
         levelLabel.setTextFill(Color.WHITE);
         levelLabel.setFont(new Font("Arial", 20));
         getChildren().add(levelLabel);
+
+        // draw a back button in the bottom left
+        backButton = new Button("back");
+        backButton.setLayoutX(50);
+        backButton.setLayoutY(420);
+        backButton.setPrefWidth(100);
+        backButton.setPrefHeight(50);
+        backButton.setFont(new Font("Arial", 20));
+        getChildren().add(backButton);
+        backButton.setOnAction(e -> {
+            // System.out.println("back button clicked");
+            getChildren().clear();
+            getChildren().add(new MenuPane());
+        });
     }
 
     // check if all letters are green

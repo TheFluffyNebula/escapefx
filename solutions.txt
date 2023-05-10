@@ -1,0 +1,10 @@
+click the button six times and the letters light up one by one, from left to right
+click the letters in order to light them up green
+click the door two times
+click the letters in order to light them up green
+click the fifth button five times, etc.
+Enter 707 into the textfield
+don't move
+click the buttons in the right order (eight)
+The simplest is to click letters 2 and 5
+ottffssent (12345678910, first letters of each number)
