@@ -83,7 +83,6 @@ public class LevelPane extends Pane {
     private Button lv10Button5;
     private Button lv10Button6;
 
-    // level 11 components
     // constructor
     /**
      * This constructor takes in a Level object
@@ -145,6 +144,7 @@ public class LevelPane extends Pane {
                 getChildren().add(new LevelPane(levelTwo));
             });
         }
+        // first use of hitboxes
         if (levelNum == 2) {
             lv2Label = new Label("no button?"); // user has to click all the letters
             lv2Label.setLayoutX(360);
