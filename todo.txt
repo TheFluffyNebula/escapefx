@@ -56,4 +56,4 @@ solutions, back button
 (DONE)
 
 final screen <FinalPane>: credits
-(IN PROGRESS)
+(DONE)
