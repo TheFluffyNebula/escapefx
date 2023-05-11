@@ -161,7 +161,7 @@ public class LevelPane extends Pane {
                 if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
                     if (eText.getFill() == letterGreen) {
                         eText.setFill(letterGray);
-                        eText.setOpacity(0.5);
+                        eText.setOpacity(1.0);
                     } else {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
@@ -171,7 +171,7 @@ public class LevelPane extends Pane {
                 if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
                     if (sText.getFill() == letterGreen) {
                         sText.setFill(letterGray);
-                        sText.setOpacity(0.5);
+                        sText.setOpacity(1.0);
                     } else {
                         sText.setFill(letterGreen);
                         sText.setOpacity(1.0);
@@ -181,7 +181,7 @@ public class LevelPane extends Pane {
                 if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
                     if (cText.getFill() == letterGreen) {
                         cText.setFill(letterGray);
-                        cText.setOpacity(0.5);
+                        cText.setOpacity(1.0);
                     } else {
                         cText.setFill(letterGreen);
                         cText.setOpacity(1.0);
@@ -191,7 +191,7 @@ public class LevelPane extends Pane {
                 if (x >= 170 && x <= 200 && y >= 50 && y <= 100) {
                     if (aText.getFill() == letterGreen) {
                         aText.setFill(letterGray);
-                        aText.setOpacity(0.5);
+                        aText.setOpacity(1.0);
                     } else {
                         aText.setFill(letterGreen);
                         aText.setOpacity(1.0);
@@ -201,7 +201,7 @@ public class LevelPane extends Pane {
                 if (x >= 210 && x <= 240 && y >= 50 && y <= 100) {
                     if (pText.getFill() == letterGreen) {
                         pText.setFill(letterGray);
-                        pText.setOpacity(0.5);
+                        pText.setOpacity(1.0);
                     } else {
                         pText.setFill(letterGreen);
                         pText.setOpacity(1.0);
@@ -211,7 +211,7 @@ public class LevelPane extends Pane {
                 if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
                     if (eText2.getFill() == letterGreen) {
                         eText2.setFill(letterGray);
-                        eText2.setOpacity(0.5);
+                        eText2.setOpacity(1.0);
                     } else {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
@@ -274,7 +274,7 @@ public class LevelPane extends Pane {
                 double x = event.getSceneX();
                 double y = event.getSceneY();
                 if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
-                    if (lv4Clicks == 1) {
+                    if (lv4Clicks == 1 && pText.getFill() == letterGreen) {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                         lv4Clicks++;
@@ -326,7 +326,7 @@ public class LevelPane extends Pane {
                 }
 
                 if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
-                    if (lv4Clicks == 1) {
+                    if (lv4Clicks == 1 && pText.getFill() == letterGreen) {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
                         lv4Clicks++;
@@ -538,14 +538,14 @@ public class LevelPane extends Pane {
                 if (x >= 50 && x <= 80 && y >= 50 && y <= 100) {
                     if (eText.getFill() == letterGreen) {
                         eText.setFill(letterGray);
-                        eText.setOpacity(0.5);
+                        eText.setOpacity(1.0);
                     } else {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                     }
                     if (sText.getFill() == letterGreen) {
                         sText.setFill(letterGray);
-                        sText.setOpacity(0.5);
+                        sText.setOpacity(1.0);
                     } else {
                         sText.setFill(letterGreen);
                         sText.setOpacity(1.0);
@@ -555,21 +555,21 @@ public class LevelPane extends Pane {
                 if (x >= 90 && x <= 120 && y >= 50 && y <= 100) {
                     if (eText.getFill() == letterGreen) {
                         eText.setFill(letterGray);
-                        eText.setOpacity(0.5);
+                        eText.setOpacity(1.0);
                     } else {
                         eText.setFill(letterGreen);
                         eText.setOpacity(1.0);
                     }
                     if (sText.getFill() == letterGreen) {
                         sText.setFill(letterGray);
-                        sText.setOpacity(0.5);
+                        sText.setOpacity(1.0);
                     } else {
                         sText.setFill(letterGreen);
                         sText.setOpacity(1.0);
                     }
                     if (cText.getFill() == letterGreen) {
                         cText.setFill(letterGray);
-                        cText.setOpacity(0.5);
+                        cText.setOpacity(1.0);
                     } else {
                         cText.setFill(letterGreen);
                         cText.setOpacity(1.0);
@@ -579,21 +579,21 @@ public class LevelPane extends Pane {
                 if (x >= 130 && x <= 160 && y >= 50 && y <= 100) {
                     if (sText.getFill() == letterGreen) {
                         sText.setFill(letterGray);
-                        sText.setOpacity(0.5);
+                        sText.setOpacity(1.0);
                     } else {
                         sText.setFill(letterGreen);
                         sText.setOpacity(1.0);
                     }
                     if (cText.getFill() == letterGreen) {
                         cText.setFill(letterGray);
-                        cText.setOpacity(0.5);
+                        cText.setOpacity(1.0);
                     } else {
                         cText.setFill(letterGreen);
                         cText.setOpacity(1.0);
                     }
                     if (aText.getFill() == letterGreen) {
                         aText.setFill(letterGray);
-                        aText.setOpacity(0.5);
+                        aText.setOpacity(1.0);
                     } else {
                         aText.setFill(letterGreen);
                         aText.setOpacity(1.0);
@@ -603,21 +603,21 @@ public class LevelPane extends Pane {
                 if (x >= 170 && x <= 200 && y >= 50 && y <= 100) {
                     if (cText.getFill() == letterGreen) {
                         cText.setFill(letterGray);
-                        cText.setOpacity(0.5);
+                        cText.setOpacity(1.0);
                     } else {
                         cText.setFill(letterGreen);
                         cText.setOpacity(1.0);
                     }
                     if (aText.getFill() == letterGreen) {
                         aText.setFill(letterGray);
-                        aText.setOpacity(0.5);
+                        aText.setOpacity(1.0);
                     } else {
                         aText.setFill(letterGreen);
                         aText.setOpacity(1.0);
                     }
                     if (pText.getFill() == letterGreen) {
                         pText.setFill(letterGray);
-                        pText.setOpacity(0.5);
+                        pText.setOpacity(1.0);
                     } else {
                         pText.setFill(letterGreen);
                         pText.setOpacity(1.0);
@@ -627,21 +627,21 @@ public class LevelPane extends Pane {
                 if (x >= 210 && x <= 240 && y >= 50 && y <= 100) {
                     if (aText.getFill() == letterGreen) {
                         aText.setFill(letterGray);
-                        aText.setOpacity(0.5);
+                        aText.setOpacity(1.0);
                     } else {
                         aText.setFill(letterGreen);
                         aText.setOpacity(1.0);
                     }
                     if (pText.getFill() == letterGreen) {
                         pText.setFill(letterGray);
-                        pText.setOpacity(0.5);
+                        pText.setOpacity(1.0);
                     } else {
                         pText.setFill(letterGreen);
                         pText.setOpacity(1.0);
                     }
                     if (eText2.getFill() == letterGreen) {
                         eText2.setFill(letterGray);
-                        eText2.setOpacity(0.5);
+                        eText2.setOpacity(1.0);
                     } else {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
@@ -651,14 +651,14 @@ public class LevelPane extends Pane {
                 if (x >= 250 && x <= 280 && y >= 50 && y <= 100) {
                     if (eText2.getFill() == letterGreen) {
                         eText2.setFill(letterGray);
-                        eText2.setOpacity(0.5);
+                        eText2.setOpacity(1.0);
                     } else {
                         eText2.setFill(letterGreen);
                         eText2.setOpacity(1.0);
                     }
                     if (pText.getFill() == letterGreen) {
                         pText.setFill(letterGray);
-                        pText.setOpacity(0.5);
+                        pText.setOpacity(1.0);
                     } else {
                         pText.setFill(letterGreen);
                         pText.setOpacity(1.0);
@@ -757,9 +757,8 @@ public class LevelPane extends Pane {
             });
             nextLevelButton.setOnAction(e -> {
                 // System.out.println("level 3 button clicked");
-                Level levelEleven = new Level(11, "two buttons");
                 getChildren().clear();
-                getChildren().add(new LevelPane(levelEleven));
+                getChildren().add(new FinalPane());
             });
         }
 
